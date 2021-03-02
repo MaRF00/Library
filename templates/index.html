@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}View all users{% endblock %}
+{% block head%}
+    <link rel="stylesheet" href="./static/styles/style.css">
+{% endblock %}
+{% block content %}
+    <div id="principal">
+        <h1>Base de datos de cómics de Alonso</h1>
+        <div class="newbook">
+            <form action="#" method="POST">
+                <p>Name of the book</p>
+                <input class="data" type="text" name="book" id="book"><br><br>
+                <p>Name of the collection</p>
+                <input class="data" type="text" name="collection" id="collection"><br><br>
+                <p>Number of the book in the collection</p>
+                <input class="data" type="number" name="coln" id="coln"><br><br>
+                <input id="submit" type="submit" value="Submit">
+            </form> 
+        </div>
+        
+        
+        <ul>
+            <li><a href="./erase">Erase</a></li>
+            <li><a href="./view">View books</a></li>
+            <li><a href="./search">Search</a></li>
+        </ul>       
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+{% endblock %}

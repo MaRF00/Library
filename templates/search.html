@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title  %}Search for a book{% endblock %}
+{% block head%}
+<link rel="stylesheet" href="/static/styles/stylesearch.css">
+{% endblock %}
+{% block content %}
+        <div class="main">
+            <h1>Librería</h1>
+            <form action="#" method="POST">
+                <p>¿Qué libro buscas?</p>
+                <input class="Search" type="text" name="search" id="search"><br><br>
+                <input class="Submit" type="submit" name="submit" id="submit"><br>
+            </form> 
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+body{
+    background-image: url("/static/styles/viewbooks.jpg");
+    background-size: cover;
+    color: white;
+}
+
+p{  
+    font-size: large;
+    font-weight: 200;
+}
+
+.main{
+    text-align: center;
+}

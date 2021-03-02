@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title  %}View all users{% endblock %}
+{% block head%}
+    <link rel="stylesheet" href="/static/styles/styleview.css">
+{% endblock %}
+{% block content %}
+        <div class="main">
+            <h1>Librería</h1>
+            <form action="#" method="POST">
+                <p>¿Qué libro buscas?</p>
+                <input class="Search" type="text" name="search" id="search"><br><br>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+            </form> 
+        </div>
+        
+    {% for item in value %}
+        <div class="main">
+            <p>{{item._id}}   {{item.name}}   {{item.collection}}   {{item.coln}}</p>
+        </div>
+        
+    {% endfor %}
+{% endblock %}
